@@ -12,7 +12,7 @@ public class NumberGuesser {
 
     public void setCorrectNumber(int x, int y) {
         if (y > x) {
-            this.correctNumber = (int) Math.random() * ((y - x) + x);
+            this.correctNumber = (int) (Math.random() * (y - x + 1) + x);
         } else {
             throw new IllegalArgumentException(y + "-" + x + " is not a valid range.");
         }
