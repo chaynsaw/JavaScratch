@@ -26,4 +26,9 @@ public class NumberGuesserTest {
         }
         assertEquals(21, set.size());
     }
+
+    @Test(expected=IllegalArgumentException.class)
+    public void generateCorrectNumber_throwsIllegalArgumentException_onInvalidRange() {
+        NumberGuesser invalidNumGuesser = new NumberGuesser(20, 0);
+    }
 }
