@@ -18,9 +18,10 @@ public class NumberGuesser {
         this.generateCorrectNumber();
     }
 
-    public void generateCorrectNumber() {
+    public int generateCorrectNumber() {
         if (max > min) {
             this.correctNumber = (int) (Math.random() * (max - min + 1) + min);
+            return this.correctNumber;
         } else {
             throw new IllegalArgumentException(max + "-" + min + " is not a valid range.");
         }
