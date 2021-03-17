@@ -2,19 +2,31 @@ package com.numberguesser;
 
 public class NumberGuesser {
     private int correctNumber;
-    public NumberGuesser(int x, int y) {
-        setCorrectNumber(x, y);
+    private int min;
+    private int max;
+    public NumberGuesser(int min, int max) {
+        setCorrectNumber(min, max);
     }
 
     public int getCorrectNumber() {
         return correctNumber;
     }
 
-    public void setCorrectNumber(int x, int y) {
-        if (y > x) {
-            this.correctNumber = (int) (Math.random() * (y - x + 1) + x);
+    public void setCorrectNumber(int min, int max) {
+        this.min = min;
+        this.max = max;
+        this.generateCorrectNumber();
+    }
+
+    public void generateCorrectNumber() {
+        if (max > min) {
+            this.correctNumber = (int) (Math.random() * (max - min + 1) + min);
         } else {
-            throw new IllegalArgumentException(y + "-" + x + " is not a valid range.");
+            throw new IllegalArgumentException(max + "-" + min + " is not a valid range.");
         }
+    }
+
+    public void begin() {
+
     }
 }
